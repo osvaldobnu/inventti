@@ -36,14 +36,21 @@ namespace ProjetoStringsPrimas
             if (VerificaTamanho(palavra1, palavra2))
                 tamanhoIgual = true;
 
-            // Verifica letras na posição impar
-            if (VerificaPosicoesImpares(palavra1, palavra2) && VerificaPosicoesPares(palavra1, palavra2))
-                posicoesLetras = true;
+            if (tamanhoIgual)
+            {
+                // Verifica letras na posição impar
+                if (VerificaPosicoesImpares(palavra1, palavra2) && VerificaPosicoesPares(palavra1, palavra2))
+                    posicoesLetras = true;
 
-            if (tamanhoIgual && posicoesLetras)
-                return "São Strings primas";
+                if (posicoesLetras)
+                    return "São Strings primas";
+                else
+                    return "Não são Strings primas";
+            }
             else
+            {
                 return "Não são Strings primas";
+            }
         }
 
         private bool VerificaTamanho(string palavra1, string palavra2)
